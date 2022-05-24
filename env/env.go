@@ -12,7 +12,9 @@ import (
 // SetenvIfNotExists is ...
 func SetenvIfNotExists(key, value string) {
 	if os.Getenv(key) == "" {
-		os.Setenv(key, value)
+		if err := os.Setenv(key, value); err != nil {
+			log.Panic().Err(err).Msgf("failed to set env [key=%s, value=%s]", key, value)
+		}
 	}
 }
 
