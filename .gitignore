@@ -1,0 +1,13 @@
+vendor
+bin/
+tools/
+
+# Temporary files
+*.log
+cover.out
+cover.html
+report.*
+
+# IDE Editor
+.vscode/
+.idea/
